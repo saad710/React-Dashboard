@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.rbc-today {
+  background-color: teal!important;
+}
+.rbc-off-range-bg {
+  background: none!important;
+}

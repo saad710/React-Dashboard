@@ -1,24 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import HomePage from './Component/HomePage';
+import NoMatch from './Component/NoMatch';
+import ChatMessage from './Component/ChatMessage';
+
+import EventCalendar from './Component/EventCalendar';
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+      <Route path = "/home">
+        <HomePage/>
+      </Route>
+      <Route path = "/chat">
+        <ChatMessage/>
+      </Route>
+      <Route path = "/event">
+        <EventCalendar/>
+      </Route>
+     
+      <Route exact path = "/">
+        <HomePage/>
+      </Route>
+      <Route path = "*">
+        <NoMatch/>
+      </Route>
+      </Switch>
+     </Router>
   );
 }
 
